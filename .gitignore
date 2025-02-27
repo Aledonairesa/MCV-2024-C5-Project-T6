@@ -2,7 +2,7 @@
 *.pt
 
 # wandb files
-wandb/*
+yolo/wandb/*
 
 # output files
-runs/*
+yolo/runs/*
