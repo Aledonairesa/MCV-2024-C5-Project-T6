@@ -54,7 +54,12 @@ def process_annotations():
         for ann in annotations:
             parts = ann.strip().split(" ")
             frame, _, class_id, img_h, img_w, rle = int(parts[0]), int(parts[1]) % 1000, int(parts[2]), int(parts[3]), int(parts[4]), parts[5]
-            class_id = class_id - 1 if class_id in [1, 2] else class_id  # TODO I get some output classes with ID = 10!? I thought they  could only be either 1 or 2
+            
+            if class_id not in [1, 2]:  # Skip annotations with class_id other than 1 or 2
+                continue
+            
+            class_id -= 1  # Adjust class_id (1 -> 0, 2 -> 1)
+            
             if frame not in frame_annotations:
                 frame_annotations[frame] = []
             frame_annotations[frame].append((class_id, img_h, img_w, rle))
@@ -69,21 +74,21 @@ def process_annotations():
             label_dst = os.path.join(label_dst_dir, new_img_name.replace(".png", ".txt"))
             
             shutil.copy(img_src, img_dst)
-            if frame_number not in frame_annotations:
-                continue  # No objects in image
-            
             img_h, img_w, _ = cv2.imread(img_src).shape
+            
+            # Ensure an empty label file is created
             with open(label_dst, "w") as label_file:
-                for class_id, ann_h, ann_w, rle in frame_annotations[frame_number]:
-                    mask = rle_to_mask(rle, ann_h, ann_w)
-                    bbox = mask_to_bbox(mask)
-                    if bbox:
-                        x, y, w, h = bbox
-                        x /= img_w
-                        y /= img_h
-                        w /= img_w
-                        h /= img_h
-                        label_file.write(f"{class_id} {x:.6f} {y:.6f} {w:.6f} {h:.6f}\n")
+                if frame_number in frame_annotations:
+                    for class_id, ann_h, ann_w, rle in frame_annotations[frame_number]:
+                        mask = rle_to_mask(rle, ann_h, ann_w)
+                        bbox = mask_to_bbox(mask)
+                        if bbox:
+                            x, y, w, h = bbox
+                            x /= img_w
+                            y /= img_h
+                            w /= img_w
+                            h /= img_h
+                            label_file.write(f"{class_id} {x:.6f} {y:.6f} {w:.6f} {h:.6f}\n")
 
 if __name__ == "__main__":
     process_annotations()
