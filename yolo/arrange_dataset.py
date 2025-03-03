@@ -2,6 +2,7 @@ import os
 import shutil
 import cv2
 import numpy as np
+from tqdm import tqdm
 import pycocotools.mask as mask_util
 
 # Base Paths
@@ -39,7 +40,7 @@ def mask_to_bbox(mask):
     return x_center, y_center, width, height
 
 def process_annotations():
-    for subdir in sorted(os.listdir(KITTI_MOTS_IMAGES)):
+    for subdir in tqdm(sorted(os.listdir(KITTI_MOTS_IMAGES)), desc="Processing sequences:"):
         subdir_path = os.path.join(KITTI_MOTS_IMAGES, subdir)
         label_file = os.path.join(KITTI_MOTS_LABELS, f"{subdir}.txt")
         
