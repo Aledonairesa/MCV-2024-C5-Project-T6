@@ -59,18 +59,52 @@ Regarding the scripts, they are all in Python. We have performed experiments sep
 
 ### Running Faster R-CNN (Detectron2) experiments
 
+The scripts related to Faster R-CNN are in the `/detectron` folder and are the following:
+TO DO
+TO DO
+TO DO
+
 ### Running DETR (Hugging Face) experiments
 
-The scripts related to DETR are in the `/huggingface` folder and are the following:
-- `inference_DETR`
+The scripts related to DETR are in the `/detr` folder and are the following:
+- `inference_DETR.py`: performs inference without fine tuning + plots prediction examples + calculates COCO metrics.
+- `finetune_DETR.py`: fine-tunes DETR to coco and saves the model.
+- `eval_finetune_DETR.py`: with the saved fine-tuned model, plots prediction examples + calculates COCO metrics.
+- `utils.py`: utilities for the previous DETR scripts.
+
+The scripts don't require any arguments and can be executed directly with `python <script>.py`. More information about the scripts in the following sections.
 
 ### Running YOLO (Ultralytics) experiments
+
+The scripts related to YOLO are in the `/huggingface` folder and are the following:
+TO DO
+TO DO
+TO DO
 
 
 
 ## Datasets and Metrics
 
+In this Session there are three datasets involved:
+- [**COCO (Common Objects in Context)**](https://cocodataset.org/): It's the dataset the models we use are pre-trained with. It's is a widely used large-scale dataset for object detection, segmentation, keypoint detection, and image captioning. It contains over 330,000 images, with 1.5 million object instances spanning 80 object categories.
+- [**KITTI-MOTS**](https://www.cvlibs.net/datasets/kitti/): It's the dataset we use for inference and fine-tuning. It's an extension of the KITTI dataset, designed for multi-object tracking and segmentation (MOTS) in autonomous driving scenarios. It provides instance-level segmentation masks for cars and pedestrians across 2,000 frames from real-world street scenes. We only use the official training partition, sub-dividing it in our own train and test sets (sequences 0-15 and 16-20, respectively).
+- [**Chest X-Ray**](https://huggingface.co/datasets/Tsomaros/Chest_Xray_N_Object_Detection): It's the dataset we use for fine-tuning with domain shift. It features different conditions, containing 8 different classes to detect. Only has one bounding box per image, and the train split (that we use) contains 880 images.
 
+The metrics that we use are the official COCO metrics:
+- **AP**: AP at IoU=50:05:95  
+- **AP<sub>IoU=.50</sub>**: AP at IoU=0.50  
+- **AP<sub>IoU=.75</sub>**: AP at IoU=0.75  
+- **AP<sub>small</sub>**: AP for small objects (area < 32²)  
+- **AP<sub>medium</sub>**: AP for medium objects (32² < area < 96²)  
+- **AP<sub>large</sub>**: AP for large objects (area > 96²)  
+- **AR<sub>max=1</sub>**: AR for 1 detection per image  
+- **AR<sub>max=10</sub>**: AR for 10 detections per image  
+- **AR<sub>max=100</sub>**: AR for 100 detections per image  
+- **AR<sub>small</sub>**: AR for small objects (area < 32²)  
+- **AR<sub>medium</sub>**: AR for medium objects (32² < area < 96²)  
+- **AR<sub>large</sub>**: AR for large objects (area > 96²)
+
+We calculate them using the `COCOeval()` function from the `pycocotools` library.
 
 ## Running Inference with Pre-Trained Models (Task C)
 
