@@ -71,6 +71,7 @@ The scripts related to DETR are in the `/detr` folder and are the following:
 - `finetune_DETR.py`: fine-tunes DETR to coco and saves the model.
 - `eval_finetune_DETR.py`: with the saved fine-tuned model, plots prediction examples + calculates COCO metrics.
 - `utils.py`: utilities for the previous DETR scripts.
+- `requirements.txt`: pip requirements to execute the DETR scripts.
 
 The scripts don't require any arguments and can be executed directly with `python <script>.py`. More information about the scripts in the following sections.
 
