@@ -111,24 +111,93 @@ We calculate them using the `COCOeval()` function from the `pycocotools` library
 
 ### Faster R-CNN from Detectron2
 
+TO DO
+TO DO
+TO DO
+
 ### DETR from Hugging Face
 
-For this task, first we load the pre-trained DETR model “facebook/detr-resnet-50” from Hugging Face, along with the corresponding image processor. Then, we preprocess the test data with a custom PyTorch DataLoader, which uses a tailored collate function and the image processor. We then loop over the dataset, filtering and matching COCO to KITTI-MOTS classes. This is encapsulated in the `inference_DETR.py` script, which also plots some example prediction images, and calculates the official COCO metrics. Results are saved to the folder `results_detr_kittimots_inference`, which is created automatically if it doesn't exist.
+For this task, first we load the pre-trained DETR model “facebook/detr-resnet-50” from Hugging Face, along with the corresponding image processor. Then, we preprocess the test data with a custom PyTorch DataLoader, which uses a tailored collate function and the image processor. We then loop over the dataset, filtering and matching COCO to KITTI-MOTS classes. This is encapsulated in the `inference_DETR.py` script, which also plots some example prediction images, and calculates the official COCO metrics. Results are saved to the folder `/results_detr_kittimots_inference`, which is created automatically if it doesn't exist.
 
 Here's an example inference image:
+![example_DETR_inference](figures/0020_000045.png)
 
 ### YOLO from Ultralytics
+
+TO DO
+TO DO
+TO DO
 
 
 
 ## Evaluating Pre-Trained Models (Task D)
 
+### Faster R-CNN from Detectron2
+
+TO DO
+TO DO
+TO DO
+
+### DETR from Hugging Face
+
+To evaluate the pre-trained DETR model, we gather the groundtruth and predictions during the evaluation loop in the correct format. We map categories so all labels are KITTI-MOTS, and convert all bounding boxes to the COCO format, compatible with the evaluation library we use. Again, here we use the `inference_DETR.py`, which saves the metrics in the `coco_metrics.csv` file, inside the automatically generated `/results_detr_kittimots_inference` folder.
+
+The next table shows the official COCO metrics:
+| AP  | AP<sub>50</sub> | AP<sub>75</sub> | AP<sub>S</sub> | AP<sub>M</sub> | AP<sub>L</sub> | AR<sub>1</sub> | AR<sub>10</sub> | AR<sub>100</sub> | AR<sub>S</sub> | AR<sub>M</sub> | AR<sub>L</sub> |
+|-----|-----------------|-----------------|----------------|----------------|----------------|----------------|-----------------|------------------|--------------------|---------------------|--------------------|
+|49.5 |77.8             |53.7             |18.0            |51.1            |75.2            |14.9           |56.2            |59.3             |33.5               |60.9                |83.3               |
+
+### YOLO from Ultralytics
+
+TO DO
+TO DO
+TO DO
+
 
 
 ## Fine-Tuning the Models on KITTI-MOTS (Task E)
 
+### Faster R-CNN from Detectron2
+
+TO DO
+TO DO
+TO DO
+
+### DETR from Hugging Face
+
+To fine-tune DETR to KITTI-MOTS, first we initialize the `facebook/detr-resnet-50` model from Hugging Face with a custom, 2-label map: `{0: "car", 1: "pedestrian"}`, changing the classification head. Then, we create a custom DataLoader to preprocess the data to match the label map and apply augmentations. This is encapsulated in the `finetune_DETR.py` script.
+
+We train the model for 30 epochs with early stopping and with the Trainer and TrainingArguments functions from Hugging Face. We performed 5 different fine-tuning executions:
+- Baseline execution with some default arguments (see our GitHub for details).
+- With a set of Albumentations (see explanation below).
+- Changing the learning rate (from 1e5 to 3e5), no Albumentations.
+- Changing the image size (from 480x600 to 600x800), no Albumentations.
+- Changing the image size (from 480x600 to full size of 800x1333) + Albumentations.
+
+To obtain the qualitative and quantitative metrics, we can run the `eval_finetune_DETR.py` script. This scripts saves the visualizations and the metrics inside the `/results_detr_kittimots_finetuning` folder, which is created automatically if it doesn't exist.
+
+The next table shows the official COCO metrics for the different experiments:
+| Execution    | AP     | AP<sub>50</sub> | AP<sub>75</sub> | AP<sub>S</sub> | AP<sub>M</sub> | AP<sub>L</sub> | AR<sub>1</sub> | AR<sub>10</sub> | AR<sub>100</sub> | AR<sub>S</sub> | AR<sub>M</sub> | AR<sub>L</sub> |
+|--------------|--------|-----------------|-----------------|----------------|----------------|----------------|----------------|-----------------|------------------|----------------|----------------|----------------|
+| FT Base      | 33.3   | 61.0            | 31.7            | 8.07           | 31.4           | 65.7           | 12.2           | 41.4            | 44.8             | 14.3           | 45.7           | 76.0           |
+| FT + Aug     | 37.9   | 65.2            | 37.4            | 9.46           | 36.5           | 70.3           | 13.8           | 44.0            | 46.4             | 15.0           | 47.4           | 78.6           |
+| FT ↑LR       | 30.5   | 63.8            | 24.2            | 5.57           | 28.2           | 65.2           | 11.3           | 37.0            | 37.9             | 10.5           | 36.5           | 72.2           |
+| FT ↑Size     | 43.7   | 71.5            | 44.9            | 12.8           | 45.1           | 73.9           | 14.3           | 50.4            | 51.6             | 20.4           | 53.6           | 80.9           |
+| FT ↑↑S. + A. | -      | -               | -               | -              | -              | -              | -              | -               | -                | -              | -              | -              |
+
+
+### YOLO from Ultralytics
+
+TO DO
+TO DO
+TO DO
+
 
 
 ## Fine-Tuning on Chest X-Ray Dataset (Domain Shift) (Task F)
+
+TO DO
+TO DO
+TO DO
 
 
