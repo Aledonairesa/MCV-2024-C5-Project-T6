@@ -314,10 +314,10 @@ def main():
     print("Starting training...")
     trainer.train()
     
-    model.save_pretrained(f"{output_dir}/final_model_FULLIMG_AUG")
-    processor.save_pretrained(f"{output_dir}/final_model_FULLIMG_AUG")
+    model.save_pretrained(f"{output_dir}/final_model")
+    processor.save_pretrained(f"{output_dir}/final_model")
     
-    print(f"Fine-tuned model saved to {output_dir}/final_model_FULLIMG_AUG")
+    print(f"Fine-tuned model saved to {output_dir}/final_model")
 
 if __name__ == "__main__":
     main()
