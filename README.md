@@ -109,6 +109,16 @@ We calculate them using the `COCOeval()` function from the `pycocotools` library
 
 ## Running Inference with Pre-Trained Models (Task C)
 
+### Faster R-CNN from Detectron2
+
+### DETR from Hugging Face
+
+For this task, first we load the pre-trained DETR model “facebook/detr-resnet-50” from Hugging Face, along with the corresponding image processor. Then, we preprocess the test data with a custom PyTorch DataLoader, which uses a tailored collate function and the image processor. We then loop over the dataset, filtering and matching COCO to KITTI-MOTS classes. This is encapsulated in the `inference_DETR.py` script, which also plots some example prediction images, and calculates the official COCO metrics. Results are saved to the folder `results_detr_kittimots_inference`, which is created automatically if it doesn't exist.
+
+Here's an example inference image:
+
+### YOLO from Ultralytics
+
 
 
 ## Evaluating Pre-Trained Models (Task D)
