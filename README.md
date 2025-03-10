@@ -1,5 +1,8 @@
 # Session 1 - Object Detection
 
+Project Presentation Link: [https://docs.google.com/presentation/d/1LuvPNRzySAuQiDLLr0aJ2KDO2Aw80T1C-bB5GW31pJc/edit?usp=sharing](https://docs.google.com/presentation/d/1LuvPNRzySAuQiDLLr0aJ2KDO2Aw80T1C-bB5GW31pJc/edit?usp=sharing)
+
+
 ## Contents
 - [Introduction](#introduction)
 - [Quick Set-Up](#quick-set-up)
@@ -59,10 +62,7 @@ Regarding the scripts, they are all in Python. We have performed experiments sep
 
 ### Running Faster R-CNN (Detectron2) experiments
 
-The scripts related to Faster R-CNN are in the `/detectron` folder and are the following:
-TO DO
-TO DO
-TO DO
+The scripts related to Faster R-CNN are in the `/detectron` folder.
 
 ### Running DETR (Hugging Face) experiments
 
@@ -77,11 +77,7 @@ The scripts don't require any arguments and can be executed directly with `pytho
 
 ### Running YOLO (Ultralytics) experiments
 
-The scripts related to YOLO are in the `/huggingface` folder and are the following:
-TO DO
-TO DO
-TO DO
-
+The scripts related to YOLO are in the `/huggingface` folder.
 
 
 ## Datasets and Metrics
@@ -111,9 +107,7 @@ We calculate them using the `COCOeval()` function from the `pycocotools` library
 
 ### Faster R-CNN from Detectron2
 
-TO DO
-TO DO
-TO DO
+-
 
 ### DETR from Hugging Face
 
@@ -124,19 +118,14 @@ Here's an example inference image:
 
 ### YOLO from Ultralytics
 
-TO DO
-TO DO
-TO DO
-
+-
 
 
 ## Evaluating Pre-Trained Models (Task D)
 
 ### Faster R-CNN from Detectron2
 
-TO DO
-TO DO
-TO DO
+-
 
 ### DETR from Hugging Face
 
@@ -149,19 +138,15 @@ The next table shows the official COCO metrics:
 
 ### YOLO from Ultralytics
 
-TO DO
-TO DO
-TO DO
-
+-
 
 
 ## Fine-Tuning the Models on KITTI-MOTS (Task E)
 
 ### Faster R-CNN from Detectron2
 
-TO DO
-TO DO
-TO DO
+-
+
 
 ### DETR from Hugging Face
 
@@ -188,16 +173,11 @@ The next table shows the official COCO metrics for the different experiments:
 
 ### YOLO from Ultralytics
 
-TO DO
-TO DO
-TO DO
-
+-
 
 
 ## Fine-Tuning on Chest X-Ray Dataset (Domain Shift) (Task F)
 
-TO DO
-TO DO
-TO DO
+-
 
 
