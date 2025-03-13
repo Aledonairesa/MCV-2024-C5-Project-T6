@@ -1,7 +1,0 @@
-{"time":"2025-03-03T11:20:58.228516725+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"/home/mmajo/MCV/C5/MCV-2024-C5-Project-T6/detectron2/tools/wandb/run-20250303_112058-tiyxndl5/logs/debug-core.log"}
-{"time":"2025-03-03T11:20:58.345544587+01:00","level":"INFO","msg":"created new stream","id":"tiyxndl5"}
-{"time":"2025-03-03T11:20:58.345613104+01:00","level":"INFO","msg":"stream: started","id":"tiyxndl5"}
-{"time":"2025-03-03T11:20:58.345638885+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"tiyxndl5"}
-{"time":"2025-03-03T11:20:58.345663491+01:00","level":"INFO","msg":"sender: started","stream_id":"tiyxndl5"}
-{"time":"2025-03-03T11:20:58.345693761+01:00","level":"INFO","msg":"handler: started","stream_id":"tiyxndl5"}
-{"time":"2025-03-03T11:20:58.618834328+01:00","level":"INFO","msg":"Starting system monitor"}
