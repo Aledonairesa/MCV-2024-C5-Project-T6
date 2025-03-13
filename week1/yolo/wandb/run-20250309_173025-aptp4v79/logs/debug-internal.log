@@ -1,0 +1,16 @@
+{"time":"2025-03-09T17:30:25.886732877+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"/home/mmajo/MCV/C5/MCV-2024-C5-Project-T6/yolo/wandb/run-20250309_173025-aptp4v79/logs/debug-core.log"}
+{"time":"2025-03-09T17:30:26.000665573+01:00","level":"INFO","msg":"created new stream","id":"aptp4v79"}
+{"time":"2025-03-09T17:30:26.000716999+01:00","level":"INFO","msg":"stream: started","id":"aptp4v79"}
+{"time":"2025-03-09T17:30:26.000817273+01:00","level":"INFO","msg":"sender: started","stream_id":"aptp4v79"}
+{"time":"2025-03-09T17:30:26.000858236+01:00","level":"INFO","msg":"handler: started","stream_id":"aptp4v79"}
+{"time":"2025-03-09T17:30:26.000800406+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"aptp4v79"}
+{"time":"2025-03-09T17:30:26.269689532+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-09T21:46:49.800362172+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-09T21:46:49.801595342+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-09T21:46:50.803495975+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run_aptp4v79_model","runtime_seconds":1.968830072,"subtasks":[{"desc":"best.pt","runtime_seconds":1.4131181640000001,"progress":"11.0MB/109.1MB"}]},{"desc":"uploading artifact run-aptp4v79-curvesPrecision-RecallB_table","runtime_seconds":1.73448686},{"desc":"uploading artifact run-aptp4v79-curvesF1-ConfidenceB_table","runtime_seconds":1.5065140989999999},{"desc":"uploading artifact run-aptp4v79-curvesPrecision-ConfidenceB_table","runtime_seconds":1.266493901},{"desc":"uploading artifact run-aptp4v79-curvesRecall-ConfidenceB_table","runtime_seconds":1.015754893}],"total_operations":5}}
+{"time":"2025-03-09T21:46:55.376371051+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-09T21:46:56.668221463+01:00","level":"INFO","msg":"stream: closing","id":"aptp4v79"}
+{"time":"2025-03-09T21:46:56.668250979+01:00","level":"INFO","msg":"handler: closed","stream_id":"aptp4v79"}
+{"time":"2025-03-09T21:46:56.668262854+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"aptp4v79"}
+{"time":"2025-03-09T21:46:56.668322045+01:00","level":"INFO","msg":"sender: closed","stream_id":"aptp4v79"}
+{"time":"2025-03-09T21:46:56.668401027+01:00","level":"INFO","msg":"stream: closed","id":"aptp4v79"}

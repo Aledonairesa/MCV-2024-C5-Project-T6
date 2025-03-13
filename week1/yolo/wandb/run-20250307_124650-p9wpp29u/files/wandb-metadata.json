@@ -1,0 +1,82 @@
+{
+  "os":  "Linux-5.4.0-205-generic-x86_64-with-glibc2.17",
+  "python":  "CPython 3.8.20",
+  "startedAt":  "2025-03-07T11:46:50.981967Z",
+  "program":  "/home/mmajo/.config/Ultralytics/DDP/_temp_y30evkp8140609700036560.py",
+  "git":  {
+    "remote":  "git@github.com:Aledonairesa/MCV-2024-C5-Project-T6.git",
+    "commit":  "f5a9b8047dc27e99ef74e5769ba0e8f36287c303"
+  },
+  "email":  "mireia.majo.cornet.cvc@gmail.com",
+  "root":  "/home/mmajo/MCV/C5/MCV-2024-C5-Project-T6/yolo",
+  "host":  "cudahpc14",
+  "executable":  "/home/mmajo/miniconda3/envs/c5-project/bin/python",
+  "cpu_count":  20,
+  "cpu_count_logical":  40,
+  "gpu":  "NVIDIA GeForce RTX 2080 Ti",
+  "gpu_count":  8,
+  "disk":  {
+    "/":  {
+      "total":  "943969767424",
+      "used":  "689907548160"
+    }
+  },
+  "memory":  {
+    "total":  "201397907456"
+  },
+  "cpu":  {
+    "count":  20,
+    "countLogical":  40
+  },
+  "gpu_nvidia":  [
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing"
+    },
+    {
+      "name":  "NVIDIA GeForce RTX 2080 Ti",
+      "memoryTotal":  "11811160064",
+      "cudaCores":  4352,
+      "architecture":  "Turing"
+    }
+  ],
+  "cudaVersion":  "12.2"
+}

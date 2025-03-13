@@ -1,0 +1,16 @@
+{"time":"2025-03-07T10:26:10.133124702+01:00","level":"INFO","msg":"stream: starting","core version":"0.19.7","symlink path":"/home/mmajo/MCV/C5/MCV-2024-C5-Project-T6/yolo/wandb/run-20250307_102610-uwyjfid1/logs/debug-core.log"}
+{"time":"2025-03-07T10:26:10.247930358+01:00","level":"INFO","msg":"created new stream","id":"uwyjfid1"}
+{"time":"2025-03-07T10:26:10.24797191+01:00","level":"INFO","msg":"stream: started","id":"uwyjfid1"}
+{"time":"2025-03-07T10:26:10.248000113+01:00","level":"INFO","msg":"writer: Do: started","stream_id":"uwyjfid1"}
+{"time":"2025-03-07T10:26:10.248078792+01:00","level":"INFO","msg":"sender: started","stream_id":"uwyjfid1"}
+{"time":"2025-03-07T10:26:10.248151227+01:00","level":"INFO","msg":"handler: started","stream_id":"uwyjfid1"}
+{"time":"2025-03-07T10:26:10.570898577+01:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-03-07T12:30:54.602987535+01:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-03-07T12:30:54.604193621+01:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-03-07T12:30:55.606176902+01:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"uploading artifact run_uwyjfid1_model","runtime_seconds":1.966627718,"subtasks":[{"desc":"best.pt","runtime_seconds":1.332889093,"progress":"11.2MB/109.1MB"}]},{"desc":"uploading artifact run-uwyjfid1-curvesPrecision-RecallB_table","runtime_seconds":1.74098887},{"desc":"uploading artifact run-uwyjfid1-curvesF1-ConfidenceB_table","runtime_seconds":1.516146019},{"desc":"uploading artifact run-uwyjfid1-curvesPrecision-ConfidenceB_table","runtime_seconds":1.29398549},{"desc":"uploading artifact run-uwyjfid1-curvesRecall-ConfidenceB_table","runtime_seconds":1.017588958}],"total_operations":5}}
+{"time":"2025-03-07T12:31:05.018438685+01:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-03-07T12:31:06.199486068+01:00","level":"INFO","msg":"stream: closing","id":"uwyjfid1"}
+{"time":"2025-03-07T12:31:06.199512184+01:00","level":"INFO","msg":"handler: closed","stream_id":"uwyjfid1"}
+{"time":"2025-03-07T12:31:06.199523632+01:00","level":"INFO","msg":"writer: Close: closed","stream_id":"uwyjfid1"}
+{"time":"2025-03-07T12:31:06.199558332+01:00","level":"INFO","msg":"sender: closed","stream_id":"uwyjfid1"}
+{"time":"2025-03-07T12:31:06.199661818+01:00","level":"INFO","msg":"stream: closed","id":"uwyjfid1"}
