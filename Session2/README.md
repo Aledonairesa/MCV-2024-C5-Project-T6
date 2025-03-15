@@ -45,14 +45,14 @@ The metrics that we use are the official COCO metrics:
 - **AP**: AP at IoU=50:05:95  
 - **AP<sub>IoU=.50</sub>**: AP at IoU=0.50  
 - **AP<sub>IoU=.75</sub>**: AP at IoU=0.75  
-- **AP<sub>small</sub>**: AP for small objects (area < 32²)  
-- **AP<sub>medium</sub>**: AP for medium objects (32² < area < 96²)  
-- **AP<sub>large</sub>**: AP for large objects (area > 96²)  
-- **AR<sub>max=1</sub>**: AR for 1 detection per image  
-- **AR<sub>max=10</sub>**: AR for 10 detections per image  
-- **AR<sub>max=100</sub>**: AR for 100 detections per image  
-- **AR<sub>small</sub>**: AR for small objects (area < 32²)  
-- **AR<sub>medium</sub>**: AR for medium objects (32² < area < 96²)  
-- **AR<sub>large</sub>**: AR for large objects (area > 96²)
+- **AP<sub>S</sub>**: AP for small objects (area < 32²)  
+- **AP<sub>M</sub>**: AP for medium objects (32² < area < 96²)  
+- **AP<sub>L</sub>**: AP for large objects (area > 96²)  
+- **AR<sub>1</sub>**: AR for 1 detection per image  
+- **AR<sub>10</sub>**: AR for 10 detections per image  
+- **AR<sub>100</sub>**: AR for 100 detections per image  
+- **AR<sub>S</sub>**: AR for small objects (area < 32²)  
+- **AR<sub>M</sub>**: AR for medium objects (32² < area < 96²)  
+- **AR<sub>L</sub>**: AR for large objects (area > 96²)
 
 We calculate them using the `COCOeval()` function from the `pycocotools` library.
