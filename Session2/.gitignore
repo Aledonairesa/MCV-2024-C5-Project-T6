@@ -1,0 +1,12 @@
+# pretrained files
+*.pt
+
+# wandb files
+yolo/wandb/*
+
+# output files
+yolo/runs/*
+
+# image files
+*.jpg
+*.png
