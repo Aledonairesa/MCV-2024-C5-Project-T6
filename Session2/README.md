@@ -7,6 +7,7 @@ Project Presentation Link: [.](.)
 - [Introduction](#introduction)
 - [Quick Set-Up](#quick-set-up)
 - [Datasets and Metrics](#datasets-and-metrics)
+- [Object Segmentation Examples](#object-segmentation-examples)
 
 
 
@@ -56,3 +57,7 @@ The metrics that we use are the official COCO metrics:
 - **AR<sub>L</sub>**: AR for large objects (area > 96²)
 
 We calculate them using the `COCOeval()` function from the `pycocotools` library.
+
+
+
+## Object Segmentation Examples
