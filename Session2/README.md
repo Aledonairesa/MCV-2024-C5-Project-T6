@@ -94,7 +94,7 @@ The scripts don't require any arguments and can be executed directly with `pytho
 In this Session, there are three datasets involved:
 - [**COCO (Common Objects in Context)**](https://cocodataset.org/): It's the dataset the models we use are pre-trained with. It's a widely used large-scale dataset for different tasks, including object segmentation. It contains over 330,000 images, with 1.5 million object instances spanning 80 object categories.
 - [**KITTI-MOTS**](https://www.cvlibs.net/datasets/kitti/): It's the dataset we use for inference and fine-tuning. It's an extension of the KITTI dataset, designed for multi-object tracking and segmentation (MOTS) in autonomous driving scenarios. It provides instance-level segmentation masks for cars and pedestrians across 2,000 frames. We only use the official training partition, sub-dividing it in our own train and test sets (sequences 0-15 and 16-20, respectively).
-- [**Satellite Building Segmentation**](https://huggingface.co/datasets/keremberke/satellite-building-segmentation): It's the dataset we use for fine-tuning with domain shift. It features 9665 satellite images, showing one or multiple buildings. The task is to segment the buildings. There is one class (building), and each image usually contains multiple instances in very different sizes. The dataset is partitioned in train, validation and test. We only use the train partition for training, and test for evaluaton.
+- [**Satellite Building Segmentation**](https://huggingface.co/datasets/keremberke/satellite-building-segmentation): It's the dataset we use for fine-tuning with domain shift. It features 9,665 satellite images, showing one or multiple buildings. The task is to segment the buildings. There is one class (building), and each image usually contains multiple instances in very different sizes. The dataset is partitioned in train, validation and test. We only use the train partition for training, and test for evaluaton.
 
 The metrics that we use are the official COCO metrics:
 - **AP**: AP at IoU=50:05:95  
@@ -119,5 +119,5 @@ We calculate them using the `COCOeval()` function from the `pycocotools` library
 Inference example for the fine-tuned Mask2Former model to the KITTI-MOTS dataset:
 ![fine_tune_Mask2Former_example](figures/fine_tune_Mask2Former_example.png)
 
-Inference example for the fine-tuned Mask2Former to the domain-shifted Satellite Building Segmentation:
+Inference example for the fine-tuned Mask2Former to the domain-shifted Satellite Building Segmentation dataset:
 ![domain_shift_Mask2Former_example](figures/domain_shift_Mask2Former_example.png)
