@@ -33,6 +33,60 @@ The models are pre-trained on the **COCO dataset**, and the dataset we use for i
 
 ## Quick Set-Up
 
+To perform the experiments, we assume the KITTI-MOTS dataset is structured as follows:
+
+```
+.
+└── KITTI-MOTS/
+    ├── instances_txt/
+    │   ├── 0000.txt
+    │   ├── 0001.txt
+    │   └── ...
+    └── training/
+        └── image_02/
+            ├── 0000/
+            │   ├── 000000.png
+            │   ├── 000001.png
+            │   └── ...
+            ├── 0001/
+            │   ├── 000000.png
+            │   ├── 000001.png
+            │   └── ...
+            └── ...
+```
+
+The Satellite Building Segmentation dataset is automatically loaded using the Hugging Face API.
+
+### Running the Mask R-CNN experiments
+
+-
+
+
+### Running the Mask2Former experiments
+
+The scripts related to Mask2Former (off-the-shelf + fine-tuning) are in the `/mask2former` folder and are the following:
+- `inference_Mask2Former`: performs inference on KITTI-MOTS (preprocessed) with the off-the-shelf Mask2Former (tiny), visualizes the predictions and calculates performance metrics.
+- `finetune_Mask2Former`: fine-tunes Mask2Former (tiny) on KITTI-MOTS (preprocessed) and saves the resulting model.
+- `eval_finetune_Mask2Former`: loads a fine-tuned model, performs inference, visualizes the predictions and calculates performance metrics.
+- `requirements.txt`: pip requirements to execute the Mask2Former scripts.
+
+The scripts don't require any arguments and can be executed directly with `python <script>.py`. Adapt the KITTI-MOTS dataset path as needed (`base_dir` variable), as well as the output folder (`output_dir` variable).
+
+
+### Running the YOLO-SEG experiments
+
+-
+
+
+### Running the domain-shift experiments with Mask2Former
+
+The scripts related to the domain-shift with Mask2Former can be found in the `domain_shift` folder, and are the following:
+- `domain_shift_Mask2Former.py`: loads and preprocess the Satellite Building Segmentation dataset and fine-tunes Mask2Former (tiny), then saves the fine-tuned model.
+- `eval_domain_shift_Mask2Former.py`: loads a fine-tuned model on the Satellite Building Segmentation dataset, performs inference, visualizes the results and calculates performance metrics.
+- `requirements.txt`: pip requirements to execute the domain-shift with Mask2Former scripts. The requirements are the same as the Mask2Former experiments requirements.
+
+The scripts don't require any arguments and can be executed directly with `python <script>.py`. Adapt the output folder (`output_dir` variable) as needed.
+
 
 
 ## Datasets and Metrics
