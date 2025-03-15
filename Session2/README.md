@@ -115,3 +115,9 @@ We calculate them using the `COCOeval()` function from the `pycocotools` library
 
 
 ## Object Segmentation Examples
+
+Inference example for the fine-tuned Mask2Former model to the KITTI-MOTS dataset:
+![fine_tune_Mask2Former_example](figures/fine_tune_Mask2Former_example.png)
+
+Inference example for the fine-tuned Mask2Former to the domain-shifted Satellite Building Segmentation:
+![domain_shift_Mask2Former_example](figures/domain_shift_Mask2Former_example.png)
