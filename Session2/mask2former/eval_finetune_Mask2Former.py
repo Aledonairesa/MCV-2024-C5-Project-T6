@@ -16,7 +16,7 @@ from transformers import Mask2FormerImageProcessor, Mask2FormerForUniversalSegme
 # Model: 0 (person) -> KITTI-MOTS: 2 (pedestrian)
 # Model: 2 (car)    -> KITTI-MOTS: 1 (car)
 MODEL_TO_KITTI = {2: 2, 1: 1, 0: 0}
-# For visualization, define a label name mapping in KITTI-MOTS convention.
+# For visualization, label mapping
 KITTI_LABEL_NAMES = {0: "background", 1: "car", 2: "pedestrian"}
 
 def process_kitti_mots(root_dir, sequence_id, model, processor, device, output_dir=None, image_id_start=0):
@@ -141,7 +141,7 @@ def visualize_results(image, masks, boxes, scores, labels):
     colors = plt.cm.tab10(np.linspace(0, 1, 20))
     
     for mask, box, score, label in zip(masks, boxes, scores, labels):
-        # Apply a score threshold for visualization (if desired)
+        # Threshold for visualization
         if score < 0.5:
             continue
         
@@ -313,12 +313,9 @@ if __name__ == "__main__":
     output_dir = "./finetuning_output_aug"
     
     # Load model and image processor
-    # processor = AutoImageProcessor.from_pretrained("facebook/mask2former-swin-large-coco-instance")
-    # model = Mask2FormerForUniversalSegmentation.from_pretrained("facebook/mask2former-swin-large-coco-instance")
     processor = Mask2FormerImageProcessor.from_pretrained("./finetuning_output_aug/fine_tuned_model_aug",
                                                           do_reduce_labels=True)
     model = Mask2FormerForUniversalSegmentation.from_pretrained("./finetuning_output_aug/fine_tuned_model_aug")
-    # --> Maybe change from AutoImageProcessor to the Mask2Former one
     
     # Move model to GPU if available
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
