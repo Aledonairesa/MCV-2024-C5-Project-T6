@@ -109,7 +109,6 @@ class KITTIMOTSMask2FormerDataset(Dataset):
             try:
                 transformed = self.transform(image=image, mask=instance_seg)
                 image, instance_seg = transformed['image'], transformed['mask']
-                # image = image.transpose(2,0,1) # Convert to C, H, W
             except Exception as e:
                 print(f"Transform error: {e} - using original image and mask.")
 
@@ -159,13 +158,11 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
 
     # Model name and label mappings.
-    # model_name = "facebook/mask2former-swin-large-coco-instance"
     model_name = "facebook/mask2former-swin-tiny-coco-instance"
     id2label = {1: "car", 2: "pedestrian"}
     label2id = {"car": 1, "pedestrian": 2}
 
     # Load processor and model.
-    # processor = AutoImageProcessor.from_pretrained(model_name)
     processor = Mask2FormerImageProcessor.from_pretrained(model_name, do_reduce_labels=True)
     model = Mask2FormerForUniversalSegmentation.from_pretrained(
         model_name,
