@@ -48,10 +48,6 @@ class SatelliteBuildingDataset(Dataset):
         draw = ImageDraw.Draw(polygon_mask_img)
 
         for poly_pts in polygons:
-            # poly_pts is typically a list of (x, y, x, y, ...)
-            # The dataset sometimes stores them nested like [ [x1,y1, x2,y2, ...] ] 
-            # so you can do poly_pts = poly_pts[0] if needed or
-            # flatten as below. We'll assume poly_pts[0] is the outer polygon.
             if isinstance(poly_pts[0], list):  
                 coords = poly_pts[0]
             else:
@@ -138,13 +134,11 @@ def main():
     os.makedirs(output_dir, exist_ok=True)
 
     # Model name and label mappings.
-    # model_name = "facebook/mask2former-swin-large-coco-instance"
     model_name = "facebook/mask2former-swin-tiny-coco-instance"
     id2label = {1: "building"}
     label2id = {"building": 1}
 
     # Load processor and model.
-    # processor = AutoImageProcessor.from_pretrained(model_name)
     processor = Mask2FormerImageProcessor.from_pretrained(model_name,
                                                           do_reduce_labels=True)
     model = Mask2FormerForUniversalSegmentation.from_pretrained(
