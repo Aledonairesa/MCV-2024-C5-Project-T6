@@ -132,7 +132,6 @@ def parse_buildings_test_split(
         if instance_seg is not None and len(segments_info) > 0:
             instance_seg = instance_seg.cpu().numpy()
 
-            # We'll collect lists to optionally visualize
             masks = []
             boxes = []
             scores = []
@@ -144,9 +143,6 @@ def parse_buildings_test_split(
                 label_id = seg_obj["label_id"] + 1
                 score = seg_obj.get("score", 1.0)
 
-                # if label_id != 1:
-                #     continue
-
                 # Create the binary mask for this instance
                 mask = (instance_seg == seg_id).astype(np.uint8)
                 
@@ -156,7 +152,7 @@ def parse_buildings_test_split(
                 # Append to predictions
                 predictions.append({
                     "image_id": image_id,
-                    "category_id": label_id,   # or 1 if only one class for "building"
+                    "category_id": label_id,
                     "segmentation": rle,
                     "score": float(score)
                 })
@@ -203,7 +199,7 @@ def build_ground_truth_buildings_coco(hf_dataset):
         ]
     }
 
-    annotation_id = 1  # Will increment for each object
+    annotation_id = 1
 
     # Iterate through each example in the dataset
     for idx, example in enumerate(hf_dataset):
@@ -231,9 +227,6 @@ def build_ground_truth_buildings_coco(hf_dataset):
             x, y, w, h = bboxes[i]
             area = areas[i]
 
-            # The dataset's "segmentation" is a list (possibly nested),
-            # typically of format [ [x1, y1, x2, y2, ...] ] 
-            # You can pass it directly to COCO as "segmentation".
             seg = segmentations[i]
 
             # For a single building category, map 0 => category_id=1
