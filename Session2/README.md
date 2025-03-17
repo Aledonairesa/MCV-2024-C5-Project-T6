@@ -59,7 +59,14 @@ The Satellite Building Segmentation dataset is automatically loaded using the Hu
 
 ### Running the Mask R-CNN experiments
 
--
+The scripts related to Detectron2 (off-the-shelf + fine-tuning) are in the `/detectron2` folder and are the following:
+- `detectron_inference_eval`: performs inference on KITTI-MOTS with the off-the-shelf Mask R-CNN, visualizes the predictions and calculates performance metrics.
+- `detectron_finetuning.py`: fine-tunes the model on KITTI-MOTS and saves model every X iterations (can be adjusted in `cfg.SOLVER.CHECKPOINT_PERIOD`).
+- `detectron_finetuning_aug.py`: Also does fine-tuning, but in this case it also includes augmentations.
+- `detectron_inference_visu`: Also generates visualization, you can choose pretrained or finetuned model.
+
+The scripts don't require any arguments and can be executed directly with `python <script>.py`. Adapt the KITTI-MOTS dataset path as well as the rest of the paths and options as you please.
+
 
 
 ### Running the Mask2Former experiments
