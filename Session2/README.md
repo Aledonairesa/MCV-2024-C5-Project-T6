@@ -80,9 +80,16 @@ The scripts related to Mask2Former (off-the-shelf + fine-tuning) are in the `/ma
 The scripts don't require any arguments and can be executed directly with `python <script>.py`. Adapt the KITTI-MOTS dataset path as needed (`base_dir` variable), as well as the output folder (`output_dir` variable).
 
 
-### Running the YOLO-SEG experiments
+### Running the YOLO-SEGv11 experiments
 
--
+The scripts related to YOLO-SEGv11 (off-the-shelf + finetuning) are in the `\yolo_seg` folder, and are the following: 
+
+* `arrange_dataset.py`: adapts the KITTI-MOTS dataset to the YOLO input format and creates the `.yaml` file for the fine-tuning of the model.
+* `yolo_seg_train.py`: executes the fine-tuning of the YOLO model. This scripts needs the `arrange_dataset.py` executed beforehand.
+* `yolo_seg_eval.py`: taking the weights of a YOLO model it evaluates its performance with the COCO-metrics.
+* `yolo_seg_vis.py`: taking the weights of a YOLO model it generates the masks and then plots both the ground truth Bbox and the predicted max with the confidence.
+
+The scripts can be all executed with `python <script>.py` as they do not need arguments. However, take into account that you need to adapt the paths of the scripts for your specific paths.
 
 
 ### Running the domain-shift experiments with Mask2Former
