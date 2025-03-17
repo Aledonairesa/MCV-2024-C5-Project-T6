@@ -1,6 +1,6 @@
 # Session 2 - Object Segmentation
 
-Project Presentation Link: [.](.)
+Project Presentation Link: [https://docs.google.com/presentation/d/1ovFsTV0ru_FUBaPBUV44JR2ynOYeE9dh8K9409WFWKQ/edit?usp=sharing](https://docs.google.com/presentation/d/1ovFsTV0ru_FUBaPBUV44JR2ynOYeE9dh8K9409WFWKQ/edit?usp=sharing)
 
 
 ## Contents
