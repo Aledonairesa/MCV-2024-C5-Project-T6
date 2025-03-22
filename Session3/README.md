@@ -3,6 +3,7 @@
 Project Presentation Link: [.](.)
 
 
+
 ## Contents
 - [Introduction](#introduction)
 - [Quick Set-Up](#quick-set-up)
@@ -42,6 +43,8 @@ To perform the experiments, we assume the dataset is already preprocessed with t
 
 ### Running the preprocessing scripts
 
+Once the raw data downloaded, execute the preprocessing script as `python preprocess_mapping.py --base-path --input-csv --output-csv` to generate the clean version of the csv mapping. Then, to the clean mapping, apply the splitting script as `python split_mapping.py <file_path>`. This will produce three files, `<clean_mapping>_train.csv`, `<clean_mapping>_validation.csv`, and `<clean_mapping>_test.csv` corresponding to the 80-10-10 train-validation-test split, and that can be directly used with the training and evaluation scripts.
+
 ### Running the baseline training and evaluation
 
 ### Running a custom architecture training and evaluation
@@ -53,13 +56,16 @@ To perform the experiments, we assume the dataset is already preprocessed with t
 In this Session, there is only one dataset involved, the [**Food Ingredients and Recipes Dataset with Images**](https://www.kaggle.com/datasets/pes12017000148/food-ingredients-and-recipe-dataset-with-images) from Kaggle. The dataset consists of 13,582 images featuring different dishes, and a `.csv` file mapping images to ground-truth captions.
 
 Next, we show and intuitively explain the metrics that we use for evaluation:
-- **BLEU-1**:
-- **BLEU-2**:
-- **ROUGE-L**:
-- **METEOR**:
+- **BLEU-1**: Measures the precision of unigrams (single words) between the generated and reference captions.  
+- **BLEU-2**: Measures the precision of bigrams (two-word sequences) for better contextual accuracy.  
+- **ROUGE-L**: Evaluates the longest common subsequence (LCS) to assess similarity between generated and reference texts.  
+- **METEOR**: Considers synonym matching and stemming to improve semantic similarity evaluation.  
 
 We calculate them using the `evaluate` library from Hugging Face.
 
 
 
 ## Object Segmentation Examples
+
+Baseline model example:
+![baseline_example](figures/baseline_example.png)
