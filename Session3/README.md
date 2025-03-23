@@ -45,11 +45,11 @@ To perform the experiments, we assume the dataset is already preprocessed with t
 
 Once the raw data downloaded, execute the preprocessing script as `python preprocess_mapping.py --base-path --input-csv --output-csv` to generate the clean version of the csv mapping. Then, to the clean mapping, apply the splitting script as `python split_mapping.py <file_path>`. This will produce three files, `<clean_mapping>_train.csv`, `<clean_mapping>_validation.csv`, and `<clean_mapping>_test.csv` corresponding to the 80-10-10 train-validation-test split, and that can be directly used with the training and evaluation scripts.
 
-### Running the baseline training and evaluation
+### General execution script
 
-### Running a custom architecture training and evaluation
+#### Running the baseline training and evaluation
 
-
+#### Running a custom architecture training and evaluation
 
 ## Datasets and Metrics
 
