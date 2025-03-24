@@ -1,7 +1,7 @@
 # Session 3 - Image Captioning (1)
 
 Project Presentation Link: [https://docs.google.com/presentation/d/1sAJBJzR9AB08bgyJ2Knj-4jFB-DvhQbYn-4XuEG2euA/edit?usp=sharing](https://docs.google.com/presentation/d/1sAJBJzR9AB08bgyJ2Knj-4jFB-DvhQbYn-4XuEG2euA/edit?usp=sharing)
-Report Overleaf Link [https://overleaf.cvc.uab.cat/read/vjkbhjmcpbkn#aa67f6][https://overleaf.cvc.uab.cat/read/vjkbhjmcpbkn#aa67f6]
+Report Overleaf Link: [https://overleaf.cvc.uab.cat/read/vjkbhjmcpbkn#aa67f6](https://overleaf.cvc.uab.cat/read/vjkbhjmcpbkn#aa67f6)
 
 
 
