@@ -16,7 +16,7 @@ Report Overleaf Link: [https://overleaf.cvc.uab.cat/read/vjkbhjmcpbkn#aa67f6](ht
 
 ## Introduction
 
-In this Session, we experiment with more advanced **image captioning** architectures. On one hand, we experiment the **ViT-GPT2** architecture, first doing direct evaluation, and then with different fine-tuning strategies:
+In this Session, we experiment with more advanced **image captioning** architectures. On one hand, we experiment with the **ViT-GPT2** architecture, first doing direct evaluation, and then with different fine-tuning strategies:
 - ViT (FT) + GPT2 (Frozen)
 - ViT (Frozen) + GPT2 (FT)
 - ViT (FT) + GPT2 (FT)
