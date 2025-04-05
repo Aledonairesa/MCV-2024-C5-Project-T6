@@ -101,4 +101,5 @@ We calculate them using the `evaluate` library from Hugging Face.
 ## Image Captioning Examples
 
 ViT-Llama1B example:
+
 ![ViT-Llama1B_example](figures/ViT-Llama1B_example.png)
