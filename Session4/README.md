@@ -47,7 +47,7 @@ Once the raw data downloaded, execute the preprocessing script as `python prepro
 
 ### Running the ViT-GPT2 experiments
 
-TO DO
+To run the ViT-GPT2 experiments, there are two different scripts. One is for the model evaluation, `inference_vitgpt2.py`, and the other is for doing the three fine-tuning options that exist for the model, `train_vitgpt2.py`.  Both scripts can be executed without any kind of arguments.
 
 ### Running the Gemma-3-4b and SmolVLM-256M experiments
 
