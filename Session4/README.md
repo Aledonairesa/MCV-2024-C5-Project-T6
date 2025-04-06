@@ -51,7 +51,15 @@ To run the ViT-GPT2 experiments, there are two different scripts. One is for the
 
 ### Running the Gemma-3-4b and SmolVLM-256M experiments
 
-TO DO
+Inference on Gemma-3-4b and SmolVLM-256M can be ran using the files `gemma_inference.py` and `smol_inference.py`, respectively. They both require the same input arguments:
+```
+python gemma_inference.py --csv_file ./clean_mapping_validation.csv \
+                          --image_dir ./FIRD/food_images \
+                          --output_csv "predictions.csv" \
+                          --system_prompt "$sys_prompt" \
+                          --user_prompt "$usr_prompt" \
+                          --visualize True
+```
 
 ### Running the ViT-Llama experiments
 
@@ -71,7 +79,7 @@ python finetune_llama.py --num_epochs 6 \
                          --batch_size 4
 ```
 
-To executie the evaluation script, it can be done as in the following example:
+To execute the evaluation script, it can be done as in the following example:
 ```
 python evaluate_llama.py \
     --test_csv "./clean_mapping_validation.csv" \
