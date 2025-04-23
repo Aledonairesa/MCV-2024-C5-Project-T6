@@ -38,8 +38,44 @@ To perform the experiments, we assume the dataset is already preprocessed with t
 
 We also assume that the correct libraries are installed (see `requirements.txt`).
 
-
 ### Stable Diffusion Scripts
+
+Inside the `SD Models study` folder, you’ll find two scripts used for model evaluation and parameter tuning:
+
+#### `taska.py`  
+This script was used to generate sample images for an initial **qualitative analysis** across a fixed set of prompts (defined within the script itself). It evaluates the following models:
+
+- **Stable Diffusion 2.1**
+- **SDXL Base**
+- **SDXL Base + Refiner**
+- **SDXL Turbo**
+- **SD 3.5 Medium**
+
+#### `taskb.py`  
+Based on the insights from `taska.py`, we selected the two most promising models — **SD 3.5 Medium** and **SDXL Base** — for a deeper parameter optimization.  
+This script explores the impact of different generation parameters (e.g., CFG scale, number of steps, scheduler type) and uses utility functions to create an **interactive comparison tool**. Since there's no objective metric for image quality, this tool helps us **qualitatively assess** and select the best parameter combinations.
+
+Additionally outside that folder, we have:
+
+### Final Image Generation Script
+
+Outside of the study folder, we include `image_generation.py`, the main script used for generating the **final set of images** for data augmentation. This script supports flexible generation through a range of configurable options:
+
+- Choose the model (`--model`)
+- Specify a text file with prompts (`--prompt_file`)
+- Set the output directory (`--output_dir`)
+- Customize generation parameters (`--cfg`, `--steps`, `--scheduler`)
+- Define how many images to generate per prompt (`--num_images`)
+- Enable a resume mode to **skip prompts already processed** (`--resume`)
+  
+Here’s an example of how to use it:
+
+```bash
+python image_generation.py --prompt_file dummy.txt --model sdxl --cfg 5 --steps 50 --scheduler ddpm --output_dir 'generated_images_test_prompts_sdxl' --resume
+```
+
+This script ensures reproducibility, robustness (with resume support), and flexibility, making it suitable for large-scale batch generation.
+
 
 ### Categorization Scripts
 
