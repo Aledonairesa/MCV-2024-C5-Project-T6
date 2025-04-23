@@ -1,6 +1,6 @@
 # Session 5 - Diffusion Models
 
-Project Presentation Link: [.](.)
+Project Presentation Link: [https://docs.google.com/presentation/d/1-nwmd6u5HsPKaulfG6b671FrQwvelb9sxAeH24J4vps/edit?usp=sharing](https://docs.google.com/presentation/d/1-nwmd6u5HsPKaulfG6b671FrQwvelb9sxAeH24J4vps/edit?usp=sharing)
 
 
 
