@@ -7,6 +7,8 @@ Final Presentation Link: [https://docs.google.com/presentation/d/143kooncxUZwk7y
 
 Final Report Overleaf Link: [https://overleaf.cvc.uab.cat/read/vjkbhjmcpbkn#aa67f6](https://overleaf.cvc.uab.cat/read/vjkbhjmcpbkn#aa67f6)
 
+The Final Presentation is also uploaded as PDF.
+
 ---
 
 Welcome to the GitHub repository of **Team 6** for the Multimodal Recognition Project.
